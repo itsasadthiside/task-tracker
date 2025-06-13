@@ -1,40 +1,136 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
 
-## Getting Started
+# 📝 Task Tracker – Next.js + Supabase
 
-First, run the development server:
+This is a fully functional **Task Tracker** web application built using **Next.js** for the frontend and **Supabase** for the backend (database and API). It allows users to **create**, **read**, **update**, and **delete** (CRUD) tasks in real-time.
+
+> ✅ Ideal for showcasing your frontend + backend integration skills using modern full-stack technologies.
+
+---
+
+## 🔗 Live Demo
+
+👉 [Click here to visit the live app](https://your-vercel-link.vercel.app)
+
+---
+
+## 🛠 Tech Stack
+
+- **Frontend:** Next.js (React Framework), TypeScript, Tailwind CSS
+- **Backend-as-a-Service:** [Supabase](https://supabase.com/)
+- **Hosting:** Vercel
+- **Database:** PostgreSQL (via Supabase)
+
+---
+
+## 🚀 Features
+
+- Add new tasks with title and optional description
+- Edit existing tasks
+- Delete tasks
+- View tasks with timestamps
+- Clean, responsive UI with Tailwind CSS
+- Fast and modern frontend with Next.js and Supabase real-time API
+
+---
+
+## 📁 Folder Structure
+
+task-tracker/
+│
+├── app/ # Next.js pages
+│ ├── page.tsx # Home Page with Add Task
+│ └── all-tasks.tsx # View All Tasks
+│
+├── lib/ # Supabase client setup
+│ └── supabase.ts
+│
+├── public/ # Static assets
+├── styles/ # Global CSS (optional)
+├── .env.local # Environment variables
+├── README.md
+└── ...
+
+yaml
+Copy
+Edit
+
+---
+
+## ⚙️ Installation & Setup
+
+### 1. Clone the repository
 
 ```bash
+git clone https://github.com/yourusername/task-tracker.git
+cd task-tracker
+2. Install dependencies
+bash
+Copy
+Edit
+npm install
+3. Setup Supabase
+Go to supabase.com and create a project.
+
+Create a new table named tasks with the following schema:
+
+Column	Type	Notes
+id	UUID	Primary Key
+title	Text	Required
+description	Text	Optional
+created_at	Timestamp	Default: now()
+
+Enable Row Level Security (RLS) and add appropriate policies to allow read/write for anonymous users (or via service role token).
+
+Go to Project Settings → API and copy your anon public key and URL.
+
+4. Configure Environment Variables
+Create a .env.local file in the root and add:
+
+env
+Copy
+Edit
+NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-public-key
+5. Start the development server
+bash
+Copy
+Edit
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+App will be running at: http://localhost:3000
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+📸 Screenshots
+Home Page
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+All Tasks Page
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+📦 Deployment
+This app is deployed on Vercel. You can also deploy it yourself in seconds:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+Push the code to GitHub.
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Go to vercel.com, import your GitHub repo.
 
-## Learn More
+Add the environment variables in Vercel settings.
 
-To learn more about Next.js, take a look at the following resources:
+Click Deploy 🎉
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+📄 License
+This project is open source and available under the MIT License.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+🙋‍♂️ Author
+Made with ❤️ by Asadullah Khan
+LinkedIn | GitHub
 
-## Deploy on Vercel
+yaml
+Copy
+Edit
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+### ✅ Next Steps
+
+- Replace all placeholder links (GitHub repo, Vercel link, Supabase URL) with your actual ones.
+- Add screenshot images (optional) in a `screenshots/` folder and push them to GitHub.
+- Include a `LICENSE` file if needed (MIT recommended for open-source).
+
+Let me know if you want the `LICENSE` file or help setting it up!
